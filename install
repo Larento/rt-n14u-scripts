@@ -1,14 +1,27 @@
 #!/bin/sh
-source "env"
+. ./env
 
 if [ -d "$HMB_DIR" ]; then
   echo "Homebrew directory already exists at: '$HMB_DIR'. Remove it to proceed further."
+  exit 1
 fi
 
-mkdir "$HMB_DIR"
-cp -r "../." "$HMB_DIR"
+# mkdir "$HMB_DIR"
+# cp -r "../." "$HMB_DIR"
 
-nvram set script_usbmount="sh $STARTUP_SCR"
+if [ -d "../entware" ]; then
+  echo "Entware directory already exists on USB drive. Remove it to proceed further."
+  exit 1
+fi
 
-nvram commit
-service reboot
+df
+# umount /tmp/mnt
+# mount /dev/sda1/entware /tmp/opt
+
+# Install entware
+# wget -O - http://pkg.entware.net/binaries/mipsel/installer/installer.sh | sh
+
+# nvram set script_usbmount="sh $STARTUP_SCR"
+
+# nvram commit
+# service reboot
