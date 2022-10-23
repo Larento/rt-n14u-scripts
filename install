@@ -1,0 +1,14 @@
+#!/bin/sh
+source "env"
+
+if [ -d "$HMB_DIR" ]; then
+  echo "Homebrew directory already exists at: '$HMB_DIR'. Remove it to proceed further."
+fi
+
+mkdir "$HMB_DIR"
+cp -r "../." "$HMB_DIR"
+
+nvram set script_usbmount="sh $STARTUP_SCR"
+
+nvram commit
+service reboot
