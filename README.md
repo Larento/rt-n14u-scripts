@@ -1,4 +1,4 @@
-# rt14u-scripts
+# rt-n14u-scripts
 Assortment of scripts I made to easily install Entware and/or other cool stuff on ASUS RT-N14U. Router is running stock ASUS firmware `3.0.0.4.380_8285`. Using git allows me to:
 - control my `hosts` file on the router remotely without accessing the router;
 - update scripts to a new version over-the-air by sending UDP packets.
