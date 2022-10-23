@@ -1,3 +1,3 @@
 #!/bin/sh
-HMB_DIR="/jffs/homebrew"
-STARTUP_SCR="$HMB_DIR/scripts/startup"
+export HMB_DIR="/jffs/homebrew"
+export STARTUP_SCR="$HMB_DIR/scripts/startup"
